@@ -150,7 +150,8 @@ export const config: WebdriverIO.Config = {
         require: [
           './test/step-definitions/given.ts',
           './test/step-definitions/when.ts',
-          './test/step-definitions/then.ts'
+          './test/step-definitions/then.ts',
+          './test/step-definitions/translate.ts'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,
@@ -284,8 +285,9 @@ export const config: WebdriverIO.Config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {Object}                 context          Cucumber World object
      */
-    // afterScenario: function (world, result, context) {
-    // },
+    afterScenario: async (world, result, context) => {
+      await browser.saveScreenshot('./screenshot.png')
+    }
     /**
      *
      * Runs after a Cucumber Feature.

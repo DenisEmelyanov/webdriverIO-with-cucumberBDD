@@ -6,8 +6,7 @@
             "node",
             "@wdio/globals/types",
             "expect-webdriverio",
-            "@wdio/cucumber-framework",
-            "@wdio/appium-service"
+            "@wdio/cucumber-framework"
         ],
         "target": "es2022"
     }
